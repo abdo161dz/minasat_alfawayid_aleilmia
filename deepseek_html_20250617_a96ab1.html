@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الفوائد العلمية - أروقة المكتبة العتيقة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body {
+            background-color: #2A1A0F;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23E8DFCA' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            color: #3E2723;
+        }
+
+        h1, h2, h3, .section-title {
+            font-family: 'Playfair Display', serif;
+            color: #3E2723;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #E8DFCA;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(42, 26, 15, 0.5);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+            border: 1px solid #C4A586;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #C4A586;
+            border-radius: 15px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .login-container {
+            max-width: 450px;
+            margin: 10vh auto;
+            background: #E8DFCA;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(42, 26, 15, 0.5);
+            overflow: hidden;
+            animation: slideIn 0.6s ease-out;
+            border: 1px solid #C4A586;
+            position: relative;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #C4A586;
+            border-radius: 15px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            color: #E8DFCA;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .login-header {
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            color: #E8DFCA;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before,
+        .login-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23E8DFCA' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+
+        .header h1,
+        .login-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            color: #D4AF37;
+        }
+
+        .header p,
+        .login-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: #E8DFCA;
+        }
+
+        .user-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(183, 110, 62, 0.3);
+            padding: 10px 15px;
+            border-radius: 10px;
+            color: #E8DFCA;
+            font-size: 14px;
+            z-index: 2;
+            border: 1px solid #C4A586;
+        }
+
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(183, 110, 62, 0.3);
+            color: #E8DFCA;
+            border: 1px solid #C4A586;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            z-index: 2;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .logout-btn:hover {
+            background: rgba(183, 110, 62, 0.5);
+        }
+
+        .login-form {
+            padding: 40px;
+            background: rgba(232, 223, 202, 0.9);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .sidebar {
+            background: rgba(232, 223, 202, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            height: fit-content;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            border: 1px solid #C4A586;
+        }
+
+        .content-area {
+            background: rgba(232, 223, 202, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #C4A586;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #3E2723;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #B76E3E;
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #5F7E6E;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #C4A586;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.5);
+            color: #3E2723;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #5F7E6E;
+            box-shadow: 0 0 0 3px rgba(95, 126, 110, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            color: #E8DFCA;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 10px rgba(42, 26, 15, 0.2);
+            border: 1px solid #5F7E6E;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(42, 26, 15, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 14px;
+            width: auto;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #a5b1c2 0%, #d1d8e0 100%);
+        }
+
+        .category-input-group {
+            display: flex;
+            gap: 10px;
+            align-items: end;
+        }
+
+        .category-input-group select {
+            flex: 1;
+        }
+
+        .new-category-input {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .search-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            grid-column: 1 / -1;
+            position: relative;
+        }
+
+        .search-box input {
+            padding-left: 45px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5F7E6E;
+            font-size: 18px;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, #fff9f9 0%, #f9f9ff 100%);
+            border: 1px solid #C4A586;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23C4A586' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: #5F7E6E;
+        }
+
+        .benefit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .benefit-category {
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            color: #E8DFCA;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .benefit-content {
+            color: #3E2723;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-author {
+            font-style: italic;
+            color: #5F7E6E;
+            margin-bottom: 15px;
+            padding: 5px 0;
+            border-top: 1px dashed #C4A586;
+            border-bottom: 1px dashed #C4A586;
+        }
+
+        .benefit-source {
+            background: rgba(95, 126, 110, 0.1);
+            color: #5F7E6E;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .delete-btn {
+            background: linear-gradient(135deg, #B76E3E 0%, #8B4513 100%);
+            color: #E8DFCA;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            border: 1px solid #8B4513;
+        }
+
+        .delete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(183, 110, 62, 0.3);
+        }
+
+        .no-benefits {
+            text-align: center;
+            color: #5F7E6E;
+            font-style: italic;
+            padding: 40px;
+            background: rgba(232, 223, 202, 0.5);
+            border-radius: 15px;
+            border: 2px dashed #C4A586;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            color: #E8DFCA;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(42, 26, 15, 0.3);
+            border: 1px solid #5F7E6E;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: block;
+            color: #D4AF37;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #C4A586;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: rgba(95, 126, 110, 0.1);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #5F7E6E;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .auth-tab.active {
+            background: #5F7E6E;
+            color: #E8DFCA;
+        }
+
+        .auth-tab:first-child {
+            border-radius: 0;
+        }
+
+        .auth-tab:last-child {
+            border-radius: 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .login-illustration {
+            text-align: center;
+            margin: 20px 0;
+            color: #5F7E6E;
+            font-size: 3rem;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #5F7E6E;
+        }
+
+        .forgot-password a {
+            color: #3E2723;
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .groups-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #C4A586;
+        }
+        
+        .group-item {
+            background: rgba(95, 126, 110, 0.05);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 3px solid #5F7E6E;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #C4A586;
+        }
+        
+        .group-name {
+            font-weight: 600;
+            color: #5F7E6E;
+        }
+        
+        .group-actions {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .summary-item {
+            background: linear-gradient(135deg, #fff9f9 0%, #f9f9ff 100%);
+            border: 1px solid #C4A586;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid #3E2723;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23C4A586' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .summary-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #3E2723;
+        }
+        
+        .summary-content {
+            color: #3E2723;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .summary-type {
+            background: rgba(62, 39, 35, 0.1);
+            color: #3E2723;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .add-group-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .content-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #C4A586;
+        }
+        
+        .content-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #5F7E6E;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .content-tab.active {
+            color: #3E2723;
+            border-bottom: 2px solid #3E2723;
+        }
+        
+        .summary-date {
+            font-size: 12px;
+            color: #5F7E6E;
+            margin-top: 10px;
+            text-align: left;
+        }
+        
+        .form-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .form-section {
+            background: rgba(232, 223, 202, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #C4A586;
+        }
+        
+        .sidebar-tabs {
+            display: flex;
+            background: rgba(232, 223, 202, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #C4A586;
+        }
+        
+        .sidebar-tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Playfair Display', serif;
+            color: #5F7E6E;
+        }
+        
+        .sidebar-tab.active {
+            background: #5F7E6E;
+            color: #E8DFCA;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #C4A586;
+        }
+        
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23E8DFCA' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .summary-author {
+            background: rgba(62, 39, 35, 0.1);
+            color: #3E2723;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2A1A0F;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #5F7E6E 0%, #3E2723 100%);
+            border-radius: 10px;
+            border: 2px solid #D4AF37;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3E2723 0%, #5F7E6E 100%);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .search-filters {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1,
+            .login-header h1 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .category-input-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .user-info,
+            .logout-btn {
+                position: static;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+            }
+            
+            .form-section {
+                padding: 15px;
+            }
+            
+            .sidebar-tabs {
+                flex-direction: column;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .benefit-content, .summary-content {
+            background: rgba(232, 223, 202, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .old-icon {
+            color: #B76E3E;
+            font-size: 1.2rem;
+            margin-right: 5px;
+        }
+        
+        /* التعديلات الجديدة */
+        .filter-field {
+            background: rgba(232, 223, 202, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #C4A586;
+        }
+        
+        .filter-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #5F7E6E;
+        }
+        
+        .filter-field select, 
+        .filter-field input {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #C4A586;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .summary-group {
+            background: rgba(62, 39, 35, 0.1);
+            color: #3E2723;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        #dateFilterField {
+            display: none;
+        }
+        
+        #filterBookAuthorField, 
+        #filterLessonSheikhField {
+            display: none;
+        }
+        
+        .email-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .email-modal-content {
+            background: #E8DFCA;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.3s;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #3E2723;
+        }
+        
+        .email-modal h3 {
+            margin-bottom: 20px;
+            color: #3E2723;
+        }
+        
+        .email-modal input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #C4A586;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .success-message {
+            background: rgba(95, 126, 110, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- واجهة تسجيل الدخول -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-header">
+            <div class="logo-container">
+                <div class="logo"><i class="fas fa-book"></i></div>
+            </div>
+            <h1><i class="fas fa-key old-icon"></i> دخول الموقع</h1>
+            <p>منصة لتنظيم وحفظ الفوائد العلمية</p>
+        </div>
+        
+        <div class="login-form">
+            <div class="login-illustration"><i class="fas fa-feather-alt"></i></div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">تسجيل الدخول</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">حساب جديد</button>
+            </div>
+
+            <!-- نموذج تسجيل الدخول -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername"><i class="fas fa-user old-icon"></i> اسم المستخدم:</label>
+                    <input type="text" id="loginUsername" required placeholder="أدخل اسم المستخدم">
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock old-icon"></i> كلمة المرور:</label>
+                    <input type="password" id="loginPassword" required placeholder="أدخل كلمة المرور">
+                </div>
+                
+                <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> دخول</button>
+                
+                <div class="forgot-password">
+                    <a href="#" onclick="showForgotUsername()"><i class="fas fa-user-circle old-icon"></i> نسيت اسم المستخدم؟</a>
+                    <a href="#" onclick="showForgotPassword()"><i class="fas fa-key old-icon"></i> نسيت كلمة المرور؟</a>
+                </div>
+            </form>
+
+            <!-- نموذج التسجيل -->
+            <form id="registerForm" class="hidden">
+                <div class="form-group">
+                    <label for="registerUsername"><i class="fas fa-user old-icon"></i> اسم المستخدم:</label>
+                    <input type="text" id="registerUsername" required placeholder="اختر اسم المستخدم">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerEmail"><i class="fas fa-envelope old-icon"></i> البريد الإلكتروني:</label>
+                    <input type="email" id="registerEmail" required placeholder="أدخل بريدك الإلكتروني">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword"><i class="fas fa-lock old-icon"></i> كلمة المرور:</label>
+                    <input type="password" id="registerPassword" required placeholder="اختر كلمة المرور (4 أحرف على الأقل)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock old-icon"></i> تأكيد كلمة المرور:</label>
+                    <input type="password" id="confirmPassword" required placeholder="أعد كتابة كلمة المرور">
+                </div>
+                
+                <button type="submit" class="btn"><i class="fas fa-user-plus"></i> إنشاء حساب</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- الواجهة الرئيسية -->
+    <div id="mainApp" class="container hidden">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo"><i class="fas fa-book"></i></div>
+            </div>
+            
+            <div class="user-info">
+                <i class="fas fa-user-circle old-icon"></i> مرحباً، <span id="currentUser"></span>
+            </div>
+            <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> خروج</button>
+            
+            <h1><i class="fas fa-book-open old-icon"></i> منصة الفوائد العلمية</h1>
+            <p>منصة لتنظيم وحفظ الفوائد العلمية من مختلف العلوم الشرعية</p>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-tabs">
+                    <div class="sidebar-tab active" data-tab="benefits"><i class="fas fa-lightbulb old-icon"></i> فوائد علمية</div>
+                    <div class="sidebar-tab" data-tab="summaries"><i class="fas fa-file-alt old-icon"></i> ملخصات</div>
+                    <div class="sidebar-tab" data-tab="groups"><i class="fas fa-layer-group old-icon"></i> مجموعات</div>
+                </div>
+                
+                <div class="form-sections">
+                    <!-- نموذج إضافة الفوائد -->
+                    <div id="benefitsForm" class="form-section">
+                        <h2 class="section-title"><i class="fas fa-plus-circle old-icon"></i> إضافة فائدة جديدة</h2>
+                        <form id="benefitForm">
+                            <div class="form-group">
+                                <label for="benefitText"><i class="fas fa-pen old-icon"></i> نص الفائدة:</label>
+                                <textarea id="benefitText" required placeholder="اكتب الفائدة العلمية هنا..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="author"><i class="fas fa-user-tie old-icon"></i> من القائل (اختياري):</label>
+                                <input type="text" id="author" placeholder="اسم القائل أو العالم">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="category"><i class="fas fa-tag old-icon"></i> التصنيف:</label>
+                                <div class="category-input-group">
+                                    <select id="category" required>
+                                        <option value="">اختر التصنيف أو أضف جديد</option>
+                                    </select>
+                                    <button type="button" id="addCategoryBtn" class="btn btn-small"><i class="fas fa-plus"></i> إضافة</button>
+                                </div>
+                                <input type="text" id="newCategory" placeholder="أو اكتب تصنيف جديد..." class="new-category-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="source"><i class="fas fa-book old-icon"></i> مصدر الفائدة (الكتاب):</label>
+                                <input type="text" id="source" required placeholder="اسم الكتاب أو المصدر">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="group"><i class="fas fa-folder old-icon"></i> المجموعة:</label>
+                                <select id="group">
+                                    <option value="">بدون مجموعة</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn"><i class="fas fa-plus"></i> إضافة الفائدة</button>
+                        </form>
+                    </div>
+                    
+                    <!-- نموذج إضافة الملخصات -->
+                    <div id="summariesForm" class="form-section hidden">
+                        <h2 class="section-title"><i class="fas fa-plus-circle old-icon"></i> إضافة ملخص جديد</h2>
+                        <form id="summaryForm">
+                            <div class="form-group">
+                                <label for="summaryType"><i class="fas fa-bookmark old-icon"></i> نوع الملخص:</label>
+                                <select id="summaryType" onchange="toggleSummaryFields()">
+                                    <option value="book">ملخص كتاب</option>
+                                    <option value="lesson">ملخص درس</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summaryTitle"><i class="fas fa-heading old-icon"></i> عنوان الملخص:</label>
+                                <input type="text" id="summaryTitle" required placeholder="عنوان الدرس أو الكتاب">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summaryContent"><i class="fas fa-align-left old-icon"></i> محتوى الملخص:</label>
+                                <textarea id="summaryContent" required placeholder="اكتب ملخصك هنا..." rows="4"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summaryCategory"><i class="fas fa-tag old-icon"></i> التصنيف:</label>
+                                <select id="summaryCategory">
+                                    <option value="">اختر التصنيف</option>
+                                </select>
+                            </div>
+                            
+                            <!-- حقل المجموعة الجديد للملخصات -->
+                            <div class="form-group">
+                                <label for="summaryGroup"><i class="fas fa-folder old-icon"></i> المجموعة:</label>
+                                <select id="summaryGroup">
+                                    <option value="">بدون مجموعة</option>
+                                </select>
+                            </div>
+                            
+                            <!-- حقول خاصة بملخص الكتاب -->
+                            <div id="bookFields">
+                                <div class="form-group">
+                                    <label for="bookAuthor"><i class="fas fa-user-tie old-icon"></i> اسم الكاتب:</label>
+                                    <input type="text" id="bookAuthor" placeholder="اسم مؤلف الكتاب">
+                                </div>
+                            </div>
+                            
+                            <!-- حقول خاصة بملخص الدرس -->
+                            <div id="lessonFields" class="hidden">
+                                <div class="form-group">
+                                    <label for="lessonSheikh"><i class="fas fa-user old-icon"></i> اسم الشيخ:</label>
+                                    <input type="text" id="lessonSheikh" placeholder="اسم الشيخ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessonDate"><i class="fas fa-calendar-day old-icon"></i> تاريخ الدرس:</label>
+                                    <input type="date" id="lessonDate">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn"><i class="fas fa-save"></i> حفظ الملخص</button>
+                        </form>
+                    </div>
+                    
+                    <!-- إدارة المجموعات -->
+                    <div id="groupsForm" class="form-section hidden">
+                        <h2 class="section-title"><i class="fas fa-layer-group old-icon"></i> إدارة المجموعات</h2>
+                        
+                        <div class="add-group-form">
+                            <input type="text" id="newGroupName" placeholder="اسم المجموعة الجديدة" style="flex: 1;">
+                            <button class="btn btn-small" onclick="addNewGroup()"><i class="fas fa-plus"></i> إنشاء</button>
+                        </div>
+                        
+                        <div id="groupsList">
+                            <!-- سيتم عرض المجموعات هنا -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalCount">0</span>
+                        <span class="stat-label">إجمالي الفوائد</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="categoryCount">0</span>
+                        <span class="stat-label">التصنيفات</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="summariesCount">0</span>
+                        <span class="stat-label">الملخصات</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="content-tabs">
+                    <div class="content-tab active" onclick="switchContentTab('benefits')"><i class="fas fa-lightbulb old-icon"></i> الفوائد العلمية</div>
+                    <div class="content-tab" onclick="switchContentTab('summaries')"><i class="fas fa-file-alt old-icon"></i> الملخصات</div>
+                </div>
+                
+                <div id="benefitsTab">
+                    <h2 class="section-title"><i class="fas fa-search old-icon"></i> البحث والتصفية</h2>
+                    
+                    <div class="search-filters">
+                        <div class="filter-field">
+                            <label for="searchInput"><i class="fas fa-search old-icon"></i> البحث</label>
+                            <input type="text" id="searchInput" placeholder="ابحث في الفوائد..." oninput="applyFilters()">
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterCategory"><i class="fas fa-tag old-icon"></i> التصنيف</label>
+                            <select id="filterCategory" onchange="applyFilters()">
+                                <option value="">جميع التصنيفات</option>
+                            </select>
+                        </div>
+                        
+                        <!-- فلتر القائل الجديد -->
+                        <div class="filter-field">
+                            <label for="filterAuthor"><i class="fas fa-user-tie old-icon"></i> القائل</label>
+                            <input type="text" id="filterAuthor" placeholder="ابحث حسب القائل" oninput="applyFilters()">
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterGroup"><i class="fas fa-folder old-icon"></i> المجموعة</label>
+                            <select id="filterGroup" onchange="applyFilters()">
+                                <option value="">جميع المجموعات</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterSource"><i class="fas fa-book old-icon"></i> المصدر</label>
+                            <input type="text" id="filterSource" placeholder="تصفية حسب المصدر..." oninput="applyFilters()">
+                        </div>
+                    </div>
+
+                    <h2 class="section-title"><i class="fas fa-bookmark old-icon"></i> الفوائد المحفوظة</h2>
+                    <div id="benefitsList">
+                        <div class="no-benefits">
+                            <i class="fas fa-book-open" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>لا توجد فوائد محفوظة بعد. ابدأ بإضافة أول فائدة!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="summariesTab" class="hidden">
+                    <h2 class="section-title"><i class="fas fa-search old-icon"></i> البحث والتصفية</h2>
+                    
+                    <div class="search-filters">
+                        <div class="filter-field">
+                            <label for="searchSummaryInput"><i class="fas fa-search old-icon"></i> البحث</label>
+                            <input type="text" id="searchSummaryInput" placeholder="ابحث في الملخصات..." oninput="applySummaryFilters()">
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterSummaryCategory"><i class="fas fa-tag old-icon"></i> التصنيف</label>
+                            <select id="filterSummaryCategory" onchange="applySummaryFilters()">
+                                <option value="">جميع التصنيفات</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterSummaryType"><i class="fas fa-bookmark old-icon"></i> النوع</label>
+                            <select id="filterSummaryType" onchange="toggleSummaryFilterFields()">
+                                <option value="">جميع الأنواع</option>
+                                <option value="book">ملخص كتاب</option>
+                                <option value="lesson">ملخص درس</option>
+                            </select>
+                        </div>
+                        
+                        <!-- فلتر المجموعة الجديد للملخصات -->
+                        <div class="filter-field">
+                            <label for="filterSummaryGroup"><i class="fas fa-folder old-icon"></i> المجموعة</label>
+                            <select id="filterSummaryGroup" onchange="applySummaryFilters()">
+                                <option value="">جميع المجموعات</option>
+                            </select>
+                        </div>
+                        
+                        <!-- فلتر الكاتب للملخصات من نوع كتاب -->
+                        <div class="filter-field" id="filterBookAuthorField">
+                            <label for="filterBookAuthor"><i class="fas fa-user-tie old-icon"></i> الكاتب</label>
+                            <input type="text" id="filterBookAuthor" placeholder="ابحث باسم الكاتب" oninput="applySummaryFilters()">
+                        </div>
+                        
+                        <!-- فلتر الشيخ للملخصات من نوع درس -->
+                        <div class="filter-field" id="filterLessonSheikhField">
+                            <label for="filterLessonSheikh"><i class="fas fa-user old-icon"></i> الشيخ</label>
+                            <input type="text" id="filterLessonSheikh" placeholder="ابحث باسم الشيخ" oninput="applySummaryFilters()">
+                        </div>
+                        
+                        <!-- فلتر التاريخ للملخصات من نوع درس -->
+                        <div class="filter-field" id="dateFilterField">
+                            <label for="filterLessonDate"><i class="fas fa-calendar-day old-icon"></i> تاريخ الدرس</label>
+                            <input type="date" id="filterLessonDate" onchange="applySummaryFilters()">
+                        </div>
+                    </div>
+
+                    <h2 class="section-title"><i class="fas fa-file-alt old-icon"></i> الملخصات المحفوظة</h2>
+                    <div id="summariesList">
+                        <div class="no-benefits">
+                            <i class="fas fa-file-alt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>لا توجد ملخصات محفوظة بعد. ابدأ بإضافة أول ملخص!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نموذج استعادة الحساب -->
+    <div id="emailModal" class="email-modal hidden">
+        <div class="email-modal-content">
+            <span class="close-modal" onclick="closeEmailModal()">&times;</span>
+            <h3 id="modalTitle">استعادة الحساب</h3>
+            <p id="modalDescription">الرجاء إدخال البريد الإلكتروني المرتبط بحسابك</p>
+            <input type="email" id="emailInput" placeholder="بريدك الإلكتروني">
+            <button class="btn" onclick="processRecovery()">إرسال</button>
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <span id="successText">تم إرسال معلومات الاستعادة إلى بريدك الإلكتروني</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // المتغيرات العامة
+        let currentUser = null;
+        let users = JSON.parse(localStorage.getItem('users')) || {};
+        let benefits = [];
+        let filteredBenefits = [];
+        let summaries = [];
+        let filteredSummaries = [];
+        let groups = ['الفوائد المفضلة', 'فوائد للدراسة', 'فوائد للتحقيق', 'فوائد لمراجعة', 'ملخصات كتب', 'دروس علمية'];
+        let currentContentTab = 'benefits';
+        let currentSidebarTab = 'benefits';
+        let recoveryType = ''; // 'username' أو 'password'
+
+        // بيانات تجريبية
+        const sampleBenefits = [
+            {
+                id: 1,
+                text: "قال الإمام النووي رحمه الله: 'من أراد أن يكلم الله فليقرأ القرآن، ومن أراد أن يكلمه الله فليصل'",
+                author: "الإمام النووي",
+                category: "الأدب والبلاغة",
+                source: "الأذكار للنووي",
+                group: "الفوائد المفضلة",
+                date: new Date(),
+                userId: 'admin'
+            },
+            {
+                id: 2,
+                text: "الحديث الضعيف يُعمل به في فضائل الأعمال بشروط: أن لا يكون شديد الضعف، وأن يكون له أصل من الشرع، وأن لا يعتقد ثبوته",
+                author: "",
+                category: "علوم الحديث",
+                source: "قواعد في علوم الحديث",
+                group: "فوائد للدراسة",
+                date: new Date(),
+                userId: 'admin'
+            }
+        ];
+        
+        const sampleSummaries = [
+            {
+                id: 1,
+                title: "ملخص كتاب الأربعين النووية",
+                content: "الأربعون النووية هي متن مشهور، اشتمل على اثنين وأربعين حديثاً محذوفة الإسناد في فنون مختلفة من العلم، كل حديث منها قاعدة عظيمة من قواعد الدين، وقد وصفه العلماء بأنه مشتمل على النصف الثاني من الإسلام، أي على الأحكام، لأن النصف الأول هو العقائد.",
+                category: "علوم الحديث",
+                type: "book",
+                author: "الإمام النووي",
+                group: "ملخصات كتب",
+                date: new Date(),
+                userId: 'admin'
+            },
+            {
+                id: 2,
+                title: "ملخص درس في العقيدة",
+                content: "من أصول العقيدة الصحيحة: الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر وبالقدر خيره وشره، وأن الله واحد لا شريك له في ربوبيته وألوهيته وأسمائه وصفاته.",
+                category: "العقيدة",
+                type: "lesson",
+                sheikh: "ابن باز",
+                group: "دروس علمية",
+                date: new Date(),
+                lessonDate: "2023-05-15",
+                userId: 'admin'
+            }
+        ];
+
+        // وظائف التسجيل والدخول
+        function switchAuthTab(tab) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const tabs = document.querySelectorAll('.auth-tab');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            if (tab === 'login') {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                tabs[0].classList.add('active');
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                tabs[1].classList.add('active');
+            }
+        }
+        
+        function switchContentTab(tab) {
+            const benefitsTab = document.getElementById('benefitsTab');
+            const summariesTab = document.getElementById('summariesTab');
+            const tabs = document.querySelectorAll('.content-tab');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            if (tab === 'benefits') {
+                benefitsTab.classList.remove('hidden');
+                summariesTab.classList.add('hidden');
+                tabs[0].classList.add('active');
+                currentContentTab = 'benefits';
+            } else {
+                benefitsTab.classList.add('hidden');
+                summariesTab.classList.remove('hidden');
+                tabs[1].classList.add('active');
+                currentContentTab = 'summaries';
+            }
+        }
+        
+        function switchSidebarTab(tab) {
+            const benefitsForm = document.getElementById('benefitsForm');
+            const summariesForm = document.getElementById('summariesForm');
+            const groupsForm = document.getElementById('groupsForm');
+            const tabs = document.querySelectorAll('.sidebar-tab');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            benefitsForm.classList.add('hidden');
+            summariesForm.classList.add('hidden');
+            groupsForm.classList.add('hidden');
+            
+            if (tab === 'benefits') {
+                benefitsForm.classList.remove('hidden');
+                tabs[0].classList.add('active');
+                currentSidebarTab = 'benefits';
+            } else if (tab === 'summaries') {
+                summariesForm.classList.remove('hidden');
+                tabs[1].classList.add('active');
+                currentSidebarTab = 'summaries';
+            } else if (tab === 'groups') {
+                groupsForm.classList.remove('hidden');
+                tabs[2].classList.add('active');
+                currentSidebarTab = 'groups';
+            }
+        }
+        
+        function toggleSummaryFields() {
+            const summaryType = document.getElementById('summaryType').value;
+            const bookFields = document.getElementById('bookFields');
+            const lessonFields = document.getElementById('lessonFields');
+            
+            if (summaryType === 'book') {
+                bookFields.classList.remove('hidden');
+                lessonFields.classList.add('hidden');
+            } else {
+                bookFields.classList.add('hidden');
+                lessonFields.classList.remove('hidden');
+            }
+        }
+        
+        // دالة جديدة لإظهار/إخفاء حقول البحث حسب نوع الملخص
+        function toggleSummaryFilterFields() {
+            const summaryType = document.getElementById('filterSummaryType').value;
+            const bookAuthorField = document.getElementById('filterBookAuthorField');
+            const sheikhField = document.getElementById('filterLessonSheikhField');
+            const dateField = document.getElementById('dateFilterField');
+            
+            if (summaryType === 'book') {
+                bookAuthorField.style.display = 'block';
+                sheikhField.style.display = 'none';
+                dateField.style.display = 'none';
+            } else if (summaryType === 'lesson') {
+                bookAuthorField.style.display = 'none';
+                sheikhField.style.display = 'block';
+                dateField.style.display = 'block';
+            } else {
+                bookAuthorField.style.display = 'none';
+                sheikhField.style.display = 'none';
+                dateField.style.display = 'none';
+            }
+            
+            applySummaryFilters();
+        }
+
+        function register(username, password, email) {
+            if (users[username]) {
+                alert('اسم المستخدم موجود بالفعل');
+                return false;
+            }
+            
+            // التأكد من عدم استخدام البريد الإلكتروني من قبل
+            for (const user in users) {
+                if (users[user].email === email) {
+                    alert('البريد الإلكتروني مستخدم بالفعل');
+                    return false;
+                }
+            }
+            
+            // التصنيفات الافتراضية لكل مستخدم
+            const defaultCategories = ['السيرة النبوية', 'علوم الحديث', 'الفقه', 'التفسير', 'العقيدة', 'التاريخ الإسلامي', 'الأدب والبلاغة'];
+            
+            users[username] = {
+                password: password,
+                email: email,
+                benefits: [...sampleBenefits],
+                summaries: [...sampleSummaries],
+                categories: [...defaultCategories],
+                groups: [...groups]
+            };
+            
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('تم إنشاء الحساب بنجاح!');
+            switchAuthTab('login');
+            return true;
+        }
+
+        function login(username, password) {
+            if (!users[username] || users[username].password !== password) {
+                alert('اسم المستخدم أو كلمة المرور غير صحيحة');
+                return false;
+            }
+            
+            currentUser = username;
+            localStorage.setItem('currentUser', username);
+            loadUserData();
+            showMainApp();
+            return true;
+        }
+
+        function logout() {
+            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+                currentUser = null;
+                localStorage.removeItem('currentUser');
+                showLoginScreen();
+            }
+        }
+
+        function showMainApp() {
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('currentUser').textContent = currentUser;
+        }
+
+        function showLoginScreen() {
+            document.getElementById('loginScreen').classList.remove('hidden');
+            document.getElementById('mainApp').classList.add('hidden');
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+        }
+
+        function loadUserData() {
+            if (currentUser && users[currentUser]) {
+                benefits = users[currentUser].benefits || [];
+                summaries = users[currentUser].summaries || [];
+                // التصنيفات الخاصة بالمستخدم الحالي
+                const categories = users[currentUser].categories || [];
+                groups = users[currentUser].groups || [...groups];
+                filteredBenefits = [...benefits];
+                filteredSummaries = [...summaries];
+                
+                // تحديث خيارات التصنيفات بناءً على المستخدم الحالي
+                updateCategoryOptions(categories);
+                updateGroupOptions();
+                updateGroupsList();
+                updateDisplay();
+                updateSummariesDisplay();
+            }
+        }
+
+        function saveUserData() {
+            if (currentUser && users[currentUser]) {
+                users[currentUser].benefits = benefits;
+                users[currentUser].summaries = summaries;
+                // لا نحتاج لحفظ التصنيفات هنا لأنها يتم تحديثها عند الإضافة
+                users[currentUser].groups = groups;
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+
+        // وظائف الفوائد
+        function updateCategoryOptions(categories) {
+            const categorySelect = document.getElementById('category');
+            const filterCategorySelect = document.getElementById('filterCategory');
+            const summaryCategorySelect = document.getElementById('summaryCategory');
+            const filterSummaryCategorySelect = document.getElementById('filterSummaryCategory');
+            
+            categorySelect.innerHTML = '<option value="">اختر التصنيف أو أضف جديد</option>';
+            categories.forEach(cat => {
+                categorySelect.innerHTML += `<option value="${cat}">${cat}</option>`;
+            });
+            
+            filterCategorySelect.innerHTML = '<option value="">جميع التصنيفات</option>';
+            categories.forEach(cat => {
+                filterCategorySelect.innerHTML += `<option value="${cat}">${cat}</option>`;
+            });
+            
+            summaryCategorySelect.innerHTML = '<option value="">اختر التصنيف</option>';
+            categories.forEach(cat => {
+                summaryCategorySelect.innerHTML += `<option value="${cat}">${cat}</option>`;
+            });
+            
+            filterSummaryCategorySelect.innerHTML = '<option value="">جميع التصنيفات</option>';
+            categories.forEach(cat => {
+                filterSummaryCategorySelect.innerHTML += `<option value="${cat}">${cat}</option>`;
+            });
+        }
+        
+        function updateGroupOptions() {
+            const groupSelect = document.getElementById('group');
+            const filterGroupSelect = document.getElementById('filterGroup');
+            const summaryGroupSelect = document.getElementById('summaryGroup');
+            const filterSummaryGroupSelect = document.getElementById('filterSummaryGroup');
+            
+            groupSelect.innerHTML = '<option value="">بدون مجموعة</option>';
+            groups.forEach(group => {
+                groupSelect.innerHTML += `<option value="${group}">${group}</option>`;
+            });
+            
+            filterGroupSelect.innerHTML = '<option value="">جميع المجموعات</option>';
+            groups.forEach(group => {
+                filterGroupSelect.innerHTML += `<option value="${group}">${group}</option>`;
+            });
+            
+            summaryGroupSelect.innerHTML = '<option value="">بدون مجموعة</option>';
+            groups.forEach(group => {
+                summaryGroupSelect.innerHTML += `<option value="${group}">${group}</option>`;
+            });
+            
+            filterSummaryGroupSelect.innerHTML = '<option value="">جميع المجموعات</option>';
+            groups.forEach(group => {
+                filterSummaryGroupSelect.innerHTML += `<option value="${group}">${group}</option>`;
+            });
+        }
+        
+        function updateGroupsList() {
+            const groupsList = document.getElementById('groupsList');
+            groupsList.innerHTML = '';
+            
+            groups.forEach(group => {
+                const groupItem = document.createElement('div');
+                groupItem.className = 'group-item';
+                groupItem.innerHTML = `
+                    <span class="group-name">${group}</span>
+                    <div class="group-actions">
+                        <button class="delete-btn" onclick="deleteGroup('${group}')"><i class="fas fa-trash"></i> حذف</button>
+                    </div>
+                `;
+                groupsList.appendChild(groupItem);
+            });
+        }
+
+        function addNewCategory() {
+            const newCategoryInput = document.getElementById('newCategory');
+            const addBtn = document.getElementById('addCategoryBtn');
+            
+            if (newCategoryInput.style.display === 'none' || newCategoryInput.style.display === '') {
+                newCategoryInput.style.display = 'block';
+                newCategoryInput.focus();
+                addBtn.textContent = 'تأكيد';
+            } else {
+                const newCat = newCategoryInput.value.trim();
+                if (newCat) {
+                    // التأكد من وجود المستخدم الحالي
+                    if (currentUser && users[currentUser]) {
+                        // تجنب التكرار
+                        if (!users[currentUser].categories.includes(newCat)) {
+                            // إضافة التصنيف للمستخدم الحالي
+                            users[currentUser].categories.push(newCat);
+                            
+                            // تحديث واجهة المستخدم بالتصنيفات الجديدة
+                            updateCategoryOptions(users[currentUser].categories);
+                            
+                            // تحديد التصنيف المضاف حديثاً
+                            document.getElementById('category').value = newCat;
+                            
+                            // حفظ بيانات المستخدم
+                            localStorage.setItem('users', JSON.stringify(users));
+                            
+                            // إعادة تعيين الحقل وإخفائه
+                            newCategoryInput.value = '';
+                            newCategoryInput.style.display = 'none';
+                            addBtn.textContent = 'إضافة';
+                        } else {
+                            alert('هذا التصنيف موجود بالفعل');
+                        }
+                    } else {
+                        alert('يجب تسجيل الدخول أولاً');
+                    }
+                } else {
+                    alert('الرجاء كتابة اسم التصنيف');
+                }
+            }
+        }
+        
+        function addNewGroup() {
+            const newGroupName = document.getElementById('newGroupName').value.trim();
+            if (!newGroupName) {
+                alert('الرجاء كتابة اسم المجموعة');
+                return;
+            }
+            
+            if (groups.includes(newGroupName)) {
+                alert('هذه المجموعة موجودة بالفعل');
+                return;
+            }
+            
+            groups.push(newGroupName);
+            updateGroupOptions();
+            updateGroupsList();
+            saveUserData();
+            document.getElementById('newGroupName').value = '';
+        }
+        
+        function deleteGroup(groupName) {
+            if (confirm(`هل أنت متأكد من حذف مجموعة "${groupName}"؟ سيتم إزالتها من جميع الفوائد والملخصات.`)) {
+                groups = groups.filter(g => g !== groupName);
+                
+                benefits.forEach(benefit => {
+                    if (benefit.group === groupName) {
+                        benefit.group = '';
+                    }
+                });
+                
+                summaries.forEach(summary => {
+                    if (summary.group === groupName) {
+                        summary.group = '';
+                    }
+                });
+                
+                updateGroupOptions();
+                updateGroupsList();
+                saveUserData();
+                applyFilters();
+                applySummaryFilters();
+            }
+        }
+
+        function deleteBenefit(id) {
+            if (confirm('هل أنت متأكد من حذف هذه الفائدة؟')) {
+                benefits = benefits.filter(benefit => benefit.id !== id);
+                applyFilters();
+                saveUserData();
+            }
+        }
+        
+        function deleteSummary(id) {
+            if (confirm('هل أنت متأكد من حذف هذا الملخص؟')) {
+                summaries = summaries.filter(summary => summary.id !== id);
+                applySummaryFilters();
+                saveUserData();
+            }
+        }
+
+        function applyFilters() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('filterCategory').value;
+            const authorFilter = document.getElementById('filterAuthor').value.toLowerCase();
+            const groupFilter = document.getElementById('filterGroup').value;
+            const sourceFilter = document.getElementById('filterSource').value.toLowerCase();
+            
+            filteredBenefits = benefits.filter(benefit => {
+                const matchesSearch = benefit.text.toLowerCase().includes(searchTerm) ||
+                                    benefit.source.toLowerCase().includes(searchTerm) ||
+                                    (benefit.author && benefit.author.toLowerCase().includes(searchTerm));
+                const matchesCategory = !categoryFilter || benefit.category === categoryFilter;
+                const matchesAuthor = !authorFilter || (benefit.author && benefit.author.toLowerCase().includes(authorFilter));
+                const matchesGroup = !groupFilter || benefit.group === groupFilter;
+                const matchesSource = !sourceFilter || benefit.source.toLowerCase().includes(sourceFilter);
+                
+                return matchesSearch && matchesCategory && matchesAuthor && matchesGroup && matchesSource;
+            });
+            
+            updateDisplay();
+        }
+        
+        function applySummaryFilters() {
+            const searchTerm = document.getElementById('searchSummaryInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('filterSummaryCategory').value;
+            const typeFilter = document.getElementById('filterSummaryType').value;
+            const groupFilter = document.getElementById('filterSummaryGroup').value;
+            const authorFilter = document.getElementById('filterBookAuthor').value.toLowerCase();
+            const sheikhFilter = document.getElementById('filterLessonSheikh').value.toLowerCase();
+            const dateFilter = document.getElementById('filterLessonDate').value;
+            
+            filteredSummaries = summaries.filter(summary => {
+                const matchesSearch = summary.title.toLowerCase().includes(searchTerm) ||
+                                    summary.content.toLowerCase().includes(searchTerm);
+                const matchesCategory = !categoryFilter || summary.category === categoryFilter;
+                const matchesType = !typeFilter || summary.type === typeFilter;
+                const matchesGroup = !groupFilter || summary.group === groupFilter;
+                
+                let matchesAuthor = true;
+                if (authorFilter && summary.author) {
+                    matchesAuthor = summary.author.toLowerCase().includes(authorFilter);
+                }
+                
+                let matchesSheikh = true;
+                if (sheikhFilter && summary.sheikh) {
+                    matchesSheikh = summary.sheikh.toLowerCase().includes(sheikhFilter);
+                }
+                
+                let matchesDate = true;
+                if (dateFilter && summary.lessonDate) {
+                    matchesDate = summary.lessonDate === dateFilter;
+                }
+                
+                return matchesSearch && matchesCategory && matchesType && matchesGroup && matchesAuthor && matchesSheikh && matchesDate;
+            });
+            
+            updateSummariesDisplay();
+        }
+        
+        function updateSummariesDisplay() {
+            const summariesList = document.getElementById('summariesList');
+            
+            if (filteredSummaries.length === 0) {
+                summariesList.innerHTML = '<div class="no-benefits"><i class="fas fa-file-alt" style="font-size: 3rem; margin-bottom: 15px;"></i><p>لا توجد ملخصات تطابق معايير البحث.</p></div>';
+            } else {
+                summariesList.innerHTML = filteredSummaries.map(summary => {
+                    let authorField = '';
+                    if (summary.type === 'book' && summary.author) {
+                        authorField = `<div class="summary-author"><i class="fas fa-user-tie old-icon"></i> الكاتب: ${summary.author}</div>`;
+                    } else if (summary.type === 'lesson' && summary.sheikh) {
+                        authorField = `<div class="summary-author"><i class="fas fa-user old-icon"></i> الشيخ: ${summary.sheikh}</div>`;
+                    }
+                    
+                    return `
+                        <div class="summary-item fade-in">
+                            <div class="benefit-header">
+                                <span class="summary-type">${summary.type === 'book' ? '<i class="fas fa-book old-icon"></i> ملخص كتاب' : '<i class="fas fa-chalkboard-teacher old-icon"></i> ملخص درس'}</span>
+                                ${summary.group ? `<span class="summary-group"><i class="fas fa-folder"></i> ${summary.group}</span>` : ''}
+                                <button class="delete-btn" onclick="deleteSummary(${summary.id})"><i class="fas fa-trash"></i> حذف</button>
+                            </div>
+                            <div class="summary-title">${summary.title}</div>
+                            ${authorField}
+                            <div class="summary-content">${summary.content}</div>
+                            <div class="benefit-source"><i class="fas fa-tag old-icon"></i> ${summary.category}</div>
+                            ${summary.lessonDate ? `<div class="summary-date"><i class="fas fa-calendar-day old-icon"></i> تاريخ الدرس: ${summary.lessonDate}</div>` : ''}
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+
+        function updateDisplay() {
+            const benefitsList = document.getElementById('benefitsList');
+            
+            if (filteredBenefits.length === 0) {
+                benefitsList.innerHTML = '<div class="no-benefits"><i class="fas fa-book-open" style="font-size: 3rem; margin-bottom: 15px;"></i><p>لا توجد فوائد تطابق معايير البحث.</p></div>';
+            } else {
+                benefitsList.innerHTML = filteredBenefits.map(benefit => `
+                    <div class="benefit-item fade-in">
+                        <div class="benefit-header">
+                            <div>
+                                <span class="benefit-category"><i class="fas fa-tag"></i> ${benefit.category}</span>
+                                ${benefit.group ? `<span class="benefit-category" style="background: #3E2723; margin-right: 5px;"><i class="fas fa-folder"></i> ${benefit.group}</span>` : ''}
+                            </div>
+                            <button class="delete-btn" onclick="deleteBenefit(${benefit.id})"><i class="fas fa-trash"></i> حذف</button>
+                        </div>
+                        <div class="benefit-content">${benefit.text}</div>
+                        ${benefit.author ? `<div class="benefit-author"><i class="fas fa-user-tie"></i> ${benefit.author}</div>` : ''}
+                        <div class="benefit-source"><i class="fas fa-book"></i> ${benefit.source}</div>
+                    </div>
+                `).join('');
+            }
+            
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('totalCount').textContent = benefits.length;
+            const uniqueCategories = [...new Set(benefits.map(b => b.category))];
+            document.getElementById('categoryCount').textContent = uniqueCategories.length;
+            document.getElementById('summariesCount').textContent = summaries.length;
+        }
+        
+        // وظائف استعادة الحساب
+        function showForgotUsername() {
+            recoveryType = 'username';
+            document.getElementById('modalTitle').textContent = 'استعادة اسم المستخدم';
+            document.getElementById('modalDescription').textContent = 'الرجاء إدخال البريد الإلكتروني المرتبط بحسابك';
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('emailModal').classList.remove('hidden');
+        }
+        
+        function showForgotPassword() {
+            recoveryType = 'password';
+            document.getElementById('modalTitle').textContent = 'استعادة كلمة المرور';
+            document.getElementById('modalDescription').textContent = 'الرجاء إدخال البريد الإلكتروني المرتبط بحسابك';
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('emailModal').classList.remove('hidden');
+        }
+        
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.add('hidden');
+        }
+        
+        function processRecovery() {
+            const email = document.getElementById('emailInput').value.trim();
+            if (!email) {
+                alert('الرجاء إدخال البريد الإلكتروني');
+                return;
+            }
+            
+            let foundUser = null;
+            for (const username in users) {
+                if (users[username].email === email) {
+                    foundUser = username;
+                    break;
+                }
+            }
+            
+            if (!foundUser) {
+                alert('لا يوجد حساب مرتبط بهذا البريد الإلكتروني');
+                return;
+            }
+            
+            // في بيئة حقيقية، سيتم هنا إرسال رسالة إلى البريد الإلكتروني
+            // لكننا سنعرض المعلومات مباشرة لأغراض العرض التوضيحي
+            
+            const successMessage = document.getElementById('successMessage');
+            const successText = document.getElementById('successText');
+            
+            if (recoveryType === 'username') {
+                successText.textContent = `تم إرسال اسم المستخدم إلى بريدك الإلكتروني. اسم المستخدم: ${foundUser}`;
+            } else {
+                successText.textContent = `تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.`;
+            }
+            
+            successMessage.style.display = 'block';
+            
+            // إخفاء الرسالة بعد 5 ثوان
+            setTimeout(() => {
+                closeEmailModal();
+            }, 5000);
+        }
+
+        // إضافة مستمعي الأحداث
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            
+            if (username && password) {
+                login(username, password);
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('registerUsername').value.trim();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (!username || !password || !email) {
+                alert('الرجاء ملء جميع الحقول');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('كلمات المرور غير متطابقة');
+                return;
+            }
+            
+            if (password.length < 4) {
+                alert('كلمة المرور يجب أن تكون 4 أحرف على الأقل');
+                return;
+            }
+            
+            register(username, password, email);
+        });
+
+        document.getElementById('benefitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const text = document.getElementById('benefitText').value.trim();
+            const author = document.getElementById('author').value.trim();
+            let category = document.getElementById('category').value;
+            const source = document.getElementById('source').value.trim();
+            const group = document.getElementById('group').value;
+            const newCategory = document.getElementById('newCategory').value.trim();
+            
+            if (!text || !source) {
+                alert('الرجاء ملء جميع الحقول');
+                return;
+            }
+            
+            // إذا كان المستخدم يضيف تصنيف جديد
+            if (!category && newCategory) {
+                category = newCategory;
+                if (currentUser && users[currentUser]) {
+                    if (!users[currentUser].categories.includes(category)) {
+                        users[currentUser].categories.push(category);
+                        localStorage.setItem('users', JSON.stringify(users));
+                        updateCategoryOptions(users[currentUser].categories);
+                    }
+                }
+            }
+            
+            if (!category) {
+                alert('الرجاء اختيار أو إضافة تصنيف');
+                return;
+            }
+            
+            const newBenefit = {
+                id: Date.now(),
+                text: text,
+                author: author,
+                category: category,
+                source: source,
+                group: group,
+                date: new Date(),
+                userId: currentUser
+            };
+            
+            benefits.push(newBenefit);
+            document.getElementById('benefitText').value = '';
+            document.getElementById('author').value = '';
+            document.getElementById('source').value = '';
+            document.getElementById('category').value = '';
+            document.getElementById('newCategory').value = '';
+            document.getElementById('newCategory').style.display = 'none';
+            document.getElementById('addCategoryBtn').textContent = 'إضافة';
+            
+            applyFilters();
+            saveUserData();
+            
+            document.getElementById('benefitsList').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        document.getElementById('summaryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('summaryTitle').value.trim();
+            const content = document.getElementById('summaryContent').value.trim();
+            const category = document.getElementById('summaryCategory').value;
+            const group = document.getElementById('summaryGroup').value;
+            const type = document.getElementById('summaryType').value;
+            const bookAuthor = document.getElementById('bookAuthor').value.trim();
+            const lessonSheikh = document.getElementById('lessonSheikh').value.trim();
+            const lessonDate = document.getElementById('lessonDate').value;
+            
+            if (!title || !content || !category) {
+                alert('الرجاء ملء جميع الحقول');
+                return;
+            }
+            
+            const newSummary = {
+                id: Date.now(),
+                title: title,
+                content: content,
+                category: category,
+                group: group,
+                type: type,
+                date: new Date(),
+                userId: currentUser
+            };
+            
+            if (type === 'book') {
+                newSummary.author = bookAuthor;
+                document.getElementById('bookAuthor').value = '';
+            } else {
+                newSummary.sheikh = lessonSheikh;
+                newSummary.lessonDate = lessonDate;
+                document.getElementById('lessonSheikh').value = '';
+                document.getElementById('lessonDate').value = '';
+            }
+            
+            summaries.push(newSummary);
+            document.getElementById('summaryTitle').value = '';
+            document.getElementById('summaryContent').value = '';
+            document.getElementById('summaryCategory').value = '';
+            document.getElementById('summaryGroup').value = '';
+            
+            applySummaryFilters();
+            saveUserData();
+            switchContentTab('summaries');
+        });
+
+        document.getElementById('addCategoryBtn').addEventListener('click', addNewCategory);
+        
+        // إضافة مستمعي الأحداث للتبويبات الجانبية
+        document.querySelectorAll('.sidebar-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                switchSidebarTab(this.dataset.tab);
+            });
+        });
+        
+        // تهيئة التطبيق عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('users')) {
+                // التصنيفات الافتراضية لكل مستخدم
+                const defaultCategories = ['السيرة النبوية', 'علوم الحديث', 'الفقه', 'التفسير', 'العقيدة', 'التاريخ الإسلامي', 'الأدب والبلاغة'];
+                
+                users = {
+                    admin: {
+                        password: 'admin123',
+                        email: 'admin@example.com',
+                        benefits: [...sampleBenefits],
+                        summaries: [...sampleSummaries],
+                        categories: [...defaultCategories],
+                        groups: [...groups]
+                    },
+                    user1: {
+                        password: 'pass123',
+                        email: 'user1@example.com',
+                        benefits: [],
+                        summaries: [],
+                        categories: [...defaultCategories],
+                        groups: [...groups]
+                    }
+                };
+                localStorage.setItem('users', JSON.stringify(users));
+            } else {
+                users = JSON.parse(localStorage.getItem('users')) || {};
+            }
+            
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser && users[savedUser]) {
+                currentUser = savedUser;
+                loadUserData();
+                showMainApp();
+            } else {
+                showLoginScreen();
+            }
+            
+            toggleSummaryFields();
+            toggleSummaryFilterFields();
+        });
+    </script>
+</body>
+</html>
