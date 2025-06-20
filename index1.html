@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الفوائد العلمية - أروقة المكتبة العتيقة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- زخارف عربية في الخلفية -->
+    <div class="arabic-pattern pattern-1"></div>
+    <div class="arabic-pattern pattern-2"></div>
+    <div class="arabic-pattern pattern-3"></div>
+    <div class="arabic-pattern pattern-4"></div>
+    
+    <!-- واجهة تسجيل الدخول -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-header">
+            <div class="logo-container">
+                <div class="logo"><i class="fas fa-book"></i></div>
+            </div>
+            <h1><i class="fas fa-key old-icon"></i> دخول الموقع</h1>
+            <p>منصة لتنظيم وحفظ الفوائد العلمية</p>
+        </div>
+        
+        <div class="login-form">
+            <div class="login-illustration"><i class="fas fa-feather-alt"></i></div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">تسجيل الدخول</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">حساب جديد</button>
+            </div>
+
+            <!-- نموذج تسجيل الدخول -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername"><i class="fas fa-user old-icon"></i> اسم المستخدم:</label>
+                    <input type="text" id="loginUsername" required placeholder="أدخل اسم المستخدم">
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock old-icon"></i> كلمة المرور:</label>
+                    <input type="password" id="loginPassword" required placeholder="أدخل كلمة المرور">
+                </div>
+                
+                <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> دخول</button>
+                
+                <div class="forgot-password">
+                    <a href="#" onclick="showForgotUsername()"><i class="fas fa-user-circle old-icon"></i> نسيت اسم المستخدم؟</a>
+                    <a href="#" onclick="showForgotPassword()"><i class="fas fa-key old-icon"></i> نسيت كلمة المرور؟</a>
+                </div>
+            </form>
+
+            <!-- نموذج التسجيل -->
+            <form id="registerForm" class="hidden">
+                <div class="form-group">
+                    <label for="registerUsername"><i class="fas fa-user old-icon"></i> اسم المستخدم:</label>
+                    <input type="text" id="registerUsername" required placeholder="اختر اسم المستخدم">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerEmail"><i class="fas fa-envelope old-icon"></i> البريد الإلكتروني:</label>
+                    <input type="email" id="registerEmail" required placeholder="أدخل بريدك الإلكتروني">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registerPassword"><i class="fas fa-lock old-icon"></i> كلمة المرور:</label>
+                    <input type="password" id="registerPassword" required placeholder="اختر كلمة المرور (4 أحرف على الأقل)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock old-icon"></i> تأكيد كلمة المرور:</label>
+                    <input type="password" id="confirmPassword" required placeholder="أعد كتابة كلمة المرور">
+                </div>
+                
+                <button type="submit" class="btn"><i class="fas fa-user-plus"></i> إنشاء حساب</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- الواجهة الرئيسية -->
+    <div id="mainApp" class="container hidden">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo"><i class="fas fa-book"></i></div>
+            </div>
+            
+            <div class="user-info">
+                <i class="fas fa-user-circle old-icon"></i> مرحباً، <span id="currentUser"></span>
+            </div>
+            <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> خروج</button>
+            
+            <h1><i class="fas fa-book-open old-icon"></i> منصة الفوائد العلمية</h1>
+            <p>منصة لتنظيم وحفظ الفوائد العلمية من مختلف العلوم الشرعية</p>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-tabs">
+                    <div class="sidebar-tab active" data-tab="benefits"><i class="fas fa-lightbulb old-icon"></i> فوائد علمية</div>
+                    <div class="sidebar-tab" data-tab="summaries"><i class="fas fa-file-alt old-icon"></i> ملخصات</div>
+                    <div class="sidebar-tab" data-tab="groups"><i class="fas fa-layer-group old-icon"></i> مجموعات</div>
+                </div>
+                
+                <div class="form-sections">
+                    <!-- نموذج إضافة الفوائد -->
+                    <div id="benefitsForm" class="form-section">
+                        <h2 class="section-title"><i class="fas fa-plus-circle old-icon"></i> إضافة فائدة جديدة</h2>
+                        <form id="benefitForm">
+                            <div class="form-group">
+                                <label for="benefitText"><i class="fas fa-pen old-icon"></i> نص الفائدة:</label>
+                                <textarea id="benefitText" required placeholder="اكتب الفائدة العلمية هنا..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="author"><i class="fas fa-user-tie old-icon"></i> من القائل (اختياري):</label>
+                                <input type="text" id="author" placeholder="اسم القائل أو العالم">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="category"><i class="fas fa-tag old-icon"></i> التصنيف:</label>
+                                <div class="category-input-group">
+                                    <select id="category" required>
+                                        <option value="">اختر التصنيف أو أضف جديد</option>
+                                    </select>
+                                    <button type="button" id="addCategoryBtn" class="btn btn-small"><i class="fas fa-plus"></i> إضافة</button>
+                                </div>
+                                <input type="text" id="newCategory" placeholder="أو اكتب تصنيف جديد..." class="new-category-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="source"><i class="fas fa-book old-icon"></i> مصدر الفائدة (الكتاب):</label>
+                                <input type="text" id="source" required placeholder="اسم الكتاب أو المصدر">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="group"><i class="fas fa-folder old-icon"></i> المجموعة:</label>
+                                <select id="group">
+                                    <option value="">بدون مجموعة</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn"><i class="fas fa-plus"></i> إضافة الفائدة</button>
+                        </form>
+                    </div>
+                    
+                    <!-- نموذج إضافة الملخصات -->
+                    <div id="summariesForm" class="form-section hidden">
+                        <h2 class="section-title"><i class="fas fa-plus-circle old-icon"></i> إضافة ملخص جديد</h2>
+                        <form id="summaryForm">
+                            <div class="form-group">
+                                <label for="summaryType"><i class="fas fa-bookmark old-icon"></i> نوع الملخص:</label>
+                                <select id="summaryType" onchange="toggleSummaryFields()">
+                                    <option value="book">ملخص كتاب</option>
+                                    <option value="lesson">ملخص درس</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summaryTitle"><i class="fas fa-heading old-icon"></i> عنوان الملخص:</label>
+                                <input type="text" id="summaryTitle" required placeholder="عنوان الدرس أو الكتاب">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summaryContent"><i class="fas fa-align-left old-icon"></i> محتوى الملخص:</label>
+                                <textarea id="summaryContent" required placeholder="اكتب ملخصك هنا..." rows="4"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="summaryCategory"><i class="fas fa-tag old-icon"></i> التصنيف:</label>
+                                <select id="summaryCategory">
+                                    <option value="">اختر التصنيف</option>
+                                </select>
+                            </div>
+                            
+                            <!-- حقل المجموعة الجديد للملخصات -->
+                            <div class="form-group">
+                                <label for="summaryGroup"><i class="fas fa-folder old-icon"></i> المجموعة:</label>
+                                <select id="summaryGroup">
+                                    <option value="">بدون مجموعة</option>
+                                </select>
+                            </div>
+                            
+                            <!-- حقول خاصة بملخص الكتاب -->
+                            <div id="bookFields">
+                                <div class="form-group">
+                                    <label for="bookAuthor"><i class="fas fa-user-tie old-icon"></i> اسم الكاتب:</label>
+                                    <input type="text" id="bookAuthor" placeholder="اسم مؤلف الكتاب">
+                                </div>
+                            </div>
+                            
+                            <!-- حقول خاصة بملخص الدرس -->
+                            <div id="lessonFields" class="hidden">
+                                <div class="form-group">
+                                    <label for="lessonSheikh"><i class="fas fa-user old-icon"></i> اسم الشيخ:</label>
+                                    <input type="text" id="lessonSheikh" placeholder="اسم الشيخ">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lessonDate"><i class="fas fa-calendar-day old-icon"></i> تاريخ الدرس:</label>
+                                    <input type="date" id="lessonDate">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn"><i class="fas fa-save"></i> حفظ الملخص</button>
+                        </form>
+                    </div>
+                    
+                    <!-- إدارة المجموعات -->
+                    <div id="groupsForm" class="form-section hidden">
+                        <h2 class="section-title"><i class="fas fa-layer-group old-icon"></i> إدارة المجموعات</h2>
+                        
+                        <div class="add-group-form">
+                            <input type="text" id="newGroupName" placeholder="اسم المجموعة الجديدة" style="flex: 1;">
+                            <button class="btn btn-small" onclick="addNewGroup()"><i class="fas fa-plus"></i> إنشاء</button>
+                        </div>
+                        
+                        <div id="groupsList">
+                            <!-- سيتم عرض المجموعات هنا -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalCount">0</span>
+                        <span class="stat-label">إجمالي الفوائد</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="categoryCount">0</span>
+                        <span class="stat-label">التصنيفات</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="summariesCount">0</span>
+                        <span class="stat-label">الملخصات</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="content-tabs">
+                    <div class="content-tab active" onclick="switchContentTab('benefits')"><i class="fas fa-lightbulb old-icon"></i> الفوائد العلمية</div>
+                    <div class="content-tab" onclick="switchContentTab('summaries')"><i class="fas fa-file-alt old-icon"></i> الملخصات</div>
+                </div>
+                
+                <div id="benefitsTab">
+                    <h2 class="section-title"><i class="fas fa-search old-icon"></i> البحث والتصفية</h2>
+                    
+                    <div class="search-filters">
+                        <div class="filter-field">
+                            <label for="searchInput"><i class="fas fa-search old-icon"></i> البحث</label>
+                            <input type="text" id="searchInput" placeholder="ابحث في الفوائد..." oninput="applyFilters()">
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterCategory"><i class="fas fa-tag old-icon"></i> التصنيف</label>
+                            <select id="filterCategory" onchange="applyFilters()">
+                                <option value="">جميع التصنيفات</option>
+                            </select>
+                        </div>
+                        
+                        <!-- فلتر القائل الجديد -->
+                        <div class="filter-field">
+                            <label for="filterAuthor"><i class="fas fa-user-tie old-icon"></i> القائل</label>
+                            <input type="text" id="filterAuthor" placeholder="ابحث حسب القائل" oninput="applyFilters()">
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterGroup"><i class="fas fa-folder old-icon"></i> المجموعة</label>
+                            <select id="filterGroup" onchange="applyFilters()">
+                                <option value="">جميع المجموعات</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterSource"><i class="fas fa-book old-icon"></i> المصدر</label>
+                            <input type="text" id="filterSource" placeholder="تصفية حسب المصدر..." oninput="applyFilters()">
+                        </div>
+                    </div>
+
+                    <div class="view-options">
+                        <button id="listViewBtn" class="view-btn active" onclick="setViewMode('list')"><i class="fas fa-list"></i></button>
+                        <button id="gridViewBtn" class="view-btn" onclick="setViewMode('grid')"><i class="fas fa-th"></i></button>
+                    </div>
+                    
+                    <h2 class="section-title"><i class="fas fa-bookmark old-icon"></i> الفوائد المحفوظة</h2>
+                    <div id="benefitsList">
+                        <div class="no-benefits">
+                            <i class="fas fa-book-open" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>لا توجد فوائد محفوظة بعد. ابدأ بإضافة أول فائدة!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="summariesTab" class="hidden">
+                    <h2 class="section-title"><i class="fas fa-search old-icon"></i> البحث والتصفية</h2>
+                    
+                    <div class="search-filters">
+                        <div class="filter-field">
+                            <label for="searchSummaryInput"><i class="fas fa-search old-icon"></i> البحث</label>
+                            <input type="text" id="searchSummaryInput" placeholder="ابحث في الملخصات..." oninput="applySummaryFilters()">
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterSummaryCategory"><i class="fas fa-tag old-icon"></i> التصنيف</label>
+                            <select id="filterSummaryCategory" onchange="applySummaryFilters()">
+                                <option value="">جميع التصنيفات</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-field">
+                            <label for="filterSummaryType"><i class="fas fa-bookmark old-icon"></i> النوع</label>
+                            <select id="filterSummaryType" onchange="toggleSummaryFilterFields()">
+                                <option value="">جميع الأنواع</option>
+                                <option value="book">ملخص كتاب</option>
+                                <option value="lesson">ملخص درس</option>
+                            </select>
+                        </div>
+                        
+                        <!-- فلتر المجموعة الجديد للملخصات -->
+                        <div class="filter-field">
+                            <label for="filterSummaryGroup"><i class="fas fa-folder old-icon"></i> المجموعة</label>
+                            <select id="filterSummaryGroup" onchange="applySummaryFilters()">
+                                <option value="">جميع المجموعات</option>
+                            </select>
+                        </div>
+                        
+                        <!-- فلتر الكاتب للملخصات من نوع كتاب -->
+                        <div class="filter-field" id="filterBookAuthorField">
+                            <label for="filterBookAuthor"><i class="fas fa-user-tie old-icon"></i> الكاتب</label>
+                            <input type="text" id="filterBookAuthor" placeholder="ابحث باسم الكاتب" oninput="applySummaryFilters()">
+                        </div>
+                        
+                        <!-- فلتر الشيخ للملخصات من نوع درس -->
+                        <div class="filter-field" id="filterLessonSheikhField">
+                            <label for="filterLessonSheikh"><i class="fas fa-user old-icon"></i> الشيخ</label>
+                            <input type="text" id="filterLessonSheikh" placeholder="ابحث باسم الشيخ" oninput="applySummaryFilters()">
+                        </div>
+                        
+                        <!-- فلتر التاريخ للملخصات من نوع درس -->
+                        <div class="filter-field" id="dateFilterField">
+                            <label for="filterLessonDate"><i class="fas fa-calendar-day old-icon"></i> تاريخ الدرس</label>
+                            <input type="date" id="filterLessonDate" onchange="applySummaryFilters()">
+                        </div>
+                    </div>
+
+                    <div class="view-options">
+                        <button id="listViewBtnSummary" class="view-btn active" onclick="setViewModeSummary('list')"><i class="fas fa-list"></i></button>
+                        <button id="cardViewBtnSummary" class="view-btn" onclick="setViewModeSummary('card')"><i class="fas fa-th-large"></i></button>
+                    </div>
+                    
+                    <h2 class="section-title"><i class="fas fa-file-alt old-icon"></i> الملخصات المحفوظة</h2>
+                    <div id="summariesList">
+                        <div class="no-benefits">
+                            <i class="fas fa-file-alt" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>لا توجد ملخصات محفوظة بعد. ابدأ بإضافة أول ملخص!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نموذج استعادة الحساب -->
+    <div id="emailModal" class="email-modal hidden">
+        <div class="email-modal-content">
+            <span class="close-modal" onclick="closeEmailModal()">&times;</span>
+            <h3 id="modalTitle">استعادة الحساب</h3>
+            
+            <div class="step-indicator">
+                <div class="step active">1</div>
+                <div class="step-line"></div>
+                <div class="step" id="step2">2</div>
+            </div>
+            
+            <div id="recoveryStep1">
+                <p id="modalDescription">الرجاء إدخال البريد الإلكتروني المرتبط بحسابك</p>
+                <input type="email" id="emailInput" placeholder="بريدك الإلكتروني">
+                <button class="btn" onclick="verifyEmail()">تحقق</button>
+                <div id="successMessage" class="success-message hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="successText"></span>
+                </div>
+            </div>
+            
+            <div id="recoveryStep2" class="reset-form">
+                <div class="reset-instructions">
+                    <i class="fas fa-info-circle"></i>
+                    الرجاء اختيار طريقة الاستعادة وإكمال الخطوات التالية
+                </div>
+                
+                <div id="usernameRecovery" class="hidden">
+                    <p>تم إرسال اسم المستخدم إلى بريدك الإلكتروني</p>
+                </div>
+                
+                <div id="passwordRecovery" class="hidden">
+                    <div class="form-group">
+                        <label for="newPassword">كلمة المرور الجديدة:</label>
+                        <input type="password" id="newPassword" placeholder="أدخل كلمة المرور الجديدة">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmNewPassword">تأكيد كلمة المرور:</label>
+                        <input type="password" id="confirmNewPassword" placeholder="أعد إدخال كلمة المرور">
+                    </div>
+                    <button class="btn" onclick="resetPassword()">تعيين كلمة المرور</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة التفاصيل الكاملة -->
+    <div id="detailModal" class="detail-modal hidden">
+        <div class="detail-modal-content">
+            <span class="close-detail" onclick="closeDetailModal()">&times;</span>
+            <div id="detailHeader" class="detail-header">
+                <h2 id="detailTitle"></h2>
+                <div id="detailMeta"></div>
+            </div>
+            <div id="detailBody" class="detail-body"></div>
+            <div class="detail-footer">
+                <div id="detailFooter"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
